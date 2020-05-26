@@ -7,6 +7,7 @@ export default class Form extends Component {
         super(props)
         
         this.state = {
+            gender: 'all',
             age: [
                 {
                     name: '0-15',
@@ -30,7 +31,8 @@ export default class Form extends Component {
 
     handleGenderChange = (e) => {
         const val = e.target.value
-        this.props.onFilter(val)
+        this.setState({gender: val}, this.props.onFilter(val))
+        
     }
 
     handleAgeChange = (e) => {
