@@ -18,7 +18,6 @@ export default class App extends Component {
     this.state = {
       users: [],
       filtredUsers:[],
-      search: '',
       genderSelect: 'all'
     };
   }
@@ -37,22 +36,19 @@ export default class App extends Component {
     }
   }
 
-  searchHandler = (e) => {
-    const value = e.target.value.toLowerCase()
-    this.setState({search: value}, () => this.searchByNameAndCity(this.state.search))
-  }
-
   filterHandler = (gender) => {
     this.setState({genderSelect: gender}, () => this.searchByNameAndCity(this.state.search))
   }
 
   searchByNameAndCity = (value) => {
     const {users, genderSelect} = this.state
+
     let newUsers = this.filterByGender(genderSelect, users.slice(0))
 
     if (value) {
         newUsers = newUsers.filter(user => {
-          const search = `${user.name.first} ${user.name.second} ${user.location.country}`
+          const search = `${user.name.first} ${user.name.last} ${user.location.country}`
+
         return search.toLowerCase().includes(value);
       });
     }
@@ -76,7 +72,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Container>
-          <Search placeholder={'Начните вводить...'} onSearch={this.searchHandler}/>
+          <Search placeholder={'Начните вводить...'} onSearch={this.searchByNameAndCity}/>
           <Form onFilter = {this.filterHandler}/>
           <Cards users = {filtredUsers}/>
         </Container>
