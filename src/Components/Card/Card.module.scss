@@ -1,54 +1,52 @@
 .card {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 285px;
-    padding-left: 12px;
+  box-sizing: border-box;
+  flex: 0 1 100%;
+  margin-right: 0;
 }
 
 .card__inner {
-    box-sizing: border-box;
-    background: #EAECF9;
-    display: flex;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 2px;
-    margin-bottom: 12px;
+  box-sizing: border-box;
+  background: #eaecf9;
+  display: flex;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  margin-bottom: 20px;
 }
 
 .card__image {
-    min-width: 120px;
-    min-height: 120px;
-    max-width: 50%;
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 50%;
+  border-radius: 50%;
+  margin-right: 32px;
+  padding: 10px;
+  img {
     border-radius: 50%;
-    margin-right: 32px;
-    padding: 10px;
-    img {
-        border-radius: 50%;
-    }
+  }
 }
 
 .card__name {
-    margin-top: 32px;
-    font-weight: bold;
-    color: #000000;
-    font-size: 13px;
-    margin-bottom: 2px;
+  margin-top: 32px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 13px;
+  margin-bottom: 2px;
 }
 
 .card__bold {
-    font-weight: bold;
-    color: #000000;
+  font-weight: bold;
+  color: #000000;
 }
 
-
 .card__text {
-    width: 50%;
-    text-align: left;
-    font-family: 'PT Sans'; 
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-    line-height: 13px;
-    color: rgba(0, 0, 0, 0.6);
+  width: 50%;
+  text-align: left;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 13px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .card_name,
@@ -57,24 +55,32 @@
 .card__age,
 .card__city,
 .card__date {
-    margin-bottom: 2px;
-    margin-top: 0;
+  margin-bottom: 2px;
+  margin-top: 0;
 }
-
-
 
 @media screen and (min-width: 768px) {
-    .card {
-        width: 50%;
+  .card {
+    flex: 0 1 calc(50% - 10px);
+    margin-right: 20px;
+    &:nth-child(2n) {
+      margin-right: 0;
     }
+  }
 }
 
-@media screen and  (min-width: 1200px) {
-    .card {
-        width: 25%;
-        // min-width: 280px;
+@media screen and (min-width: 1236px) {
+  .card {
+    flex: 0 1 calc(25% - 10px);
+    max-width: 285px;
+    &:nth-child(2n) {
+      margin-right: 20px;
     }
-    .card__image {
-        margin-right: 10px;
-    } 
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+  .card__image {
+    margin-right: 10px;
+  }
 }

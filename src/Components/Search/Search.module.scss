@@ -1,33 +1,33 @@
 .label {
-    display: block;
-    width: 100%;
-    min-width: 200px;
-    background: #FFFFFF;
-    border: 1px solid #75BEEE;
-    box-sizing: border-box;
-    border-radius: 3px;
-    padding: 11px 12px;
-    position: relative;
-    margin-bottom: 10px;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 20px;
-        height: 20px;
-        background-image: url('./img/icon.svg');
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid #75beee;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 11px 12px;
+  position: relative;
+  margin-bottom: 10px;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("./img/icon.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 .input {
-    width: 100%;
-    box-sizing: border-box;
-    border: none;
-    color: #B3B3B3;
-    font-size: 14px;
-    line-height: 18px;
-    outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  color: #b3b3b3;
+  font-size: 14px;
+  line-height: 18px;
+  outline: none;
 }

@@ -22,7 +22,7 @@ export default class Form extends Component {
                     value: false
                 },
                 {
-                    name: '65+',
+                    name: '65',
                     value: false
                 }
             ]
@@ -30,25 +30,22 @@ export default class Form extends Component {
     }
 
     handleGenderChange = (e) => {
+        const { age } = this.state
         const val = e.target.value
-        this.setState({gender: val}, this.props.onFilter(val))
-        
+        this.setState({gender: val}, this.props.onFilter(val, age))
     }
 
     handleAgeChange = (e) => {
-        const { age } = this.state
+        const { age, gender } = this.state
         const name = e.target.name
         const index = age.findIndex(item => item.name === name)
         const newAge = [...age]
 
         newAge[index] = {...newAge[index], value: !newAge[index].value}
 
-        this.setState({age: newAge}, this.filterByAge)
+        this.setState({age: newAge}, this.props.onFilter(gender, newAge))
     }
 
-    filterByAge = () => {
-        //todo
-    }
 
     render() {
         return (
@@ -118,8 +115,8 @@ export default class Form extends Component {
                         <label className={s.form__label}>
                         65+
                         <input className={s.form__checkbox} type='checkbox' 
-                            name='65+'
-                            value='65+'
+                            name='65'
+                            value='65'
                             onChange={this.handleAgeChange}
                             checked={this.state.age[3].value}
                         />
