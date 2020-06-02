@@ -1,4 +1,4 @@
-Проект был сделан с использованием [Create React App](https://github.com/facebook/create-react-app).
+Проект был создан с использованием [Create React App](https://github.com/facebook/create-react-app).
 
 ## Тестовое задание для компании Сантехинка-онлайн
 
